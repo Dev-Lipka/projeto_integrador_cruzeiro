@@ -1,14 +1,16 @@
-/* RESET E CORES */
+/* Padronizar cores */
 :root {
   --blue-dark: #003b76;
   --blue-light: #0088d2;
   --white: #ffffff;
 }
+/*resetar estilos*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+/*config geral*/
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f0f4f8;
@@ -16,7 +18,7 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER CORRIGIDO */
+/* header */
 .main-header {
   background-color: var(--blue-dark);
   color: white;
@@ -51,7 +53,7 @@ body {
   color: var(--blue-light);
 }
 
-/* MENU DROP DOWN */
+/* menu */
 .header-right {
   display: flex;
   justify-content: flex-end;
@@ -99,8 +101,69 @@ body {
   color: #d32f2f !important;
   font-weight: bold;
 }
+/*barra deslizante jogos*/
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+}
 
-/* SEÇÃO TOP 3 */
+.scroll-container::before,
+.scroll-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+.scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+.scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.scroll-track {
+  display: flex;
+  width: calc(250px * 10);
+  animation: scroll 16s linear infinite;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.mini-card {
+  width: 200px;
+  margin: 0 15px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.mini-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-230px * 4.5));
+  }
+}
+
+/* top3 */
 .hero-title {
   text-align: center;
   padding: 40px 20px;
@@ -195,7 +258,7 @@ body {
   transform: scale(1.05);
 }
 
-/* RANKING */
+/* top10 */
 .ranking-section {
   padding: 60px 20px;
   display: flex;
@@ -253,225 +316,7 @@ body {
   border-radius: 20px;
   font-weight: bold;
 }
-.scroll-container {
-  width: 100%;
-  overflow: hidden; /* Esconde os cards que saem da área visível */
-  background: #fff;
-  padding: 20px 0;
-  white-space: nowrap;
-  position: relative;
-}
-
-/* Gradientes nas laterais para dar efeito de "fade" (opcional, fica bem profissional) */
-.scroll-container::before,
-.scroll-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100px;
-  height: 100%;
-  z-index: 2;
-}
-.scroll-container::before {
-  left: 0;
-  background: linear-gradient(to right, white, transparent);
-}
-.scroll-container::after {
-  right: 0;
-  background: linear-gradient(to left, white, transparent);
-}
-
-.scroll-track {
-  display: flex;
-  width: calc(250px * 10); /* (Largura do card * número total de cards) */
-  animation: scroll 16s linear infinite; /* 20 segundos para completar a volta */
-}
-
-/* Pausa a animação quando o usuário passa o mouse */
-.scroll-track:hover {
-  animation-play-state: paused;
-}
-
-.mini-card {
-  width: 200px;
-  margin: 0 15px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.mini-card img {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-/* A mágica da animação */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-230px * 4.5));
-  } /* Metade do total para o loop ser perfeito */
-}
-.main-footer {
-  background-color: #003b76; /* Fundo escuro para contrastar com os cards brancos */
-  color: #ffffff;
-  font-family: sans-serif;
-  margin-top: 50px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
-  gap: 40px;
-}
-
-.footer-col {
-  flex: 1;
-  min-width: 250px;
-}
-
-.footer-logo {
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.footer-logo span {
-  color: #00a6ff; /* Cor de destaque combinando com o botão do card */
-}
-.star {
-  color: #ffec00;
-}
-/* --- ESTILIZAÇÃO DO FOOTER --- */
-.main-footer {
-  background-color: var(--blue-dark); /* Mantendo o #003b76 */
-  color: white;
-  padding: 50px 0 20px;
-  margin-top: 50px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between; /* Afasta as colunas */
-  align-items: flex-start;
-  flex-wrap: wrap; /* Garante que não quebre no celular */
-  gap: 40px;
-  padding: 0 20px;
-}
-
-.footer-col {
-  flex: 1;
-  min-width: 250px;
-}
-
-/* Novo Alinhamento: Imagem + Título */
-.footer-logo-container {
-  display: flex;
-  align-items: center; /* Alinha no centro verticalmente */
-  gap: 15px; /* Espaço entre a logo e o nome */
-  margin-bottom: 15px;
-}
-
-.footer-img {
-  height: 60px; /* Tamanho da logo (ajuste se precisar) */
-  width: auto;
-}
-
-.footer-logo span {
-  color: var(--blue-light); /* Destaque no azul mais claro */
-}
-
-.branding p {
-  color: #cbd5e1;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-
-/* Estilizando as Redes Sociais */
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
-  color: white;
-  text-decoration: none;
-  border-radius: 50%; /* Deixa redondinho */
-  font-size: 14px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.social-icon:hover {
-  background-color: var(--blue-light);
-  transform: translateY(-3px); /* Faz o botão "pular" ao passar o mouse */
-}
-.social-icon img {
-  width: 24px;
-}
-/* Estilizando a Coluna Newsletter */
-.newsletter h4 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.newsletter p {
-  color: #cbd5e1;
-  margin-bottom: 15px;
-}
-
-.footer-form {
-  display: flex;
-  width: 100%;
-  max-width: 400px;
-}
-
-.footer-form input {
-  flex: 1;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 5px 0 0 5px; /* Arredonda só a esquerda */
-  outline: none;
-}
-
-.footer-form button {
-  padding: 12px 20px;
-  background-color: var(--blue-light);
-  color: white;
-  border: none;
-  border-radius: 0 5px 5px 0; /* Arredonda só a direita */
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.footer-form button:hover {
-  background-color: #0077b6;
-}
-
-/* Barra final de direitos autorais */
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #94a3b8;
-  font-size: 14px;
-}
+/*botão explorar e pesquisar*/
 .explore-button {
   margin-top: 10px;
   display: flex;
@@ -536,4 +381,159 @@ body {
 }
 .explore-input button:hover {
   background-color: var(--blue-light);
+}
+
+/*rodapé*/
+.main-footer {
+  background-color: #003b76; /* Fundo escuro para contrastar com os cards brancos */
+  color: #ffffff;
+  font-family: sans-serif;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.footer-logo span {
+  color: #00a6ff;
+}
+.star {
+  color: #ffec00;
+}
+
+.main-footer {
+  background-color: var(--blue-dark);
+  color: white;
+  padding: 50px 0 20px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-img {
+  height: 60px;
+  width: auto;
+}
+
+.footer-logo span {
+  color: var(--blue-light);
+}
+
+.branding p {
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  background-color: var(--blue-light);
+  transform: translateY(-3px);
+}
+.social-icon img {
+  width: 24px;
+}
+
+.newsletter h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.newsletter p {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.footer-form {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+}
+
+.footer-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.footer-form button {
+  padding: 12px 20px;
+  background-color: var(--blue-light);
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-form button:hover {
+  background-color: #0077b6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 14px;
 }
