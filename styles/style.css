@@ -324,15 +324,15 @@ body {
   justify-content: center;
 }
 .explore-button button {
-  width: 65%;
-  height: 40px;
+  width: 67%;
+  padding: 5px;
   background-color: var(--blue-light);
-  border-radius: 15px;
+  border-radius: 9px;
   overflow: hidden;
   border: none;
   color: var(--white);
   font-weight: bold;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-style: italic;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -349,7 +349,7 @@ body {
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 1.5rem;
   color: #00a6ff;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -369,13 +369,14 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 .explore-input button {
-  width: 8%;
   height: 40px;
+  padding: 2px 25px;
   border: none;
   border-radius: 0 15px 15px 0;
   background-color: #00a6ff;
   color: white;
   font-weight: bold;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
